@@ -1,0 +1,221 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<title>用关系代数表示数据查询的典型例子</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>三亿文库</o:Author>
+  <o:LastAuthor>三亿文库</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>59</o:TotalTime>
+  <o:Created>2018/1/3 21:09:38</o:Created>
+  <o:LastSaved>2018/1/3 21:09:38</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>101</o:Words>
+  <o:Characters>576</o:Characters>
+  <o:Company>三亿文库</o:Company>
+  <o:Lines>4</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>676</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:16.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-style-next:正文;
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:22.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:22.0pt;
+	font-weight:bold;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 89.85pt 72.0pt 89.85pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:42.55pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>《用关系代数表示数据查询的典型例子》来自三亿文库</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt;color:#993300'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:150%;margin-top:3.6pt;'><span lang=EN-US style='font-size:9.0pt;line-height:150%'><a href="http://m.3y.uu456.com/mss_n54g37oorfkzk1cqy0ny2k1cjn2kitrmqnesg3chajfpni1c_1.html"><span lang=EN-US style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";text-decoration:none;text-underline:none'><span lang=EN-US>点这里，有很多篇《用关系代数表示数据查询的典型例子》</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>在线阅读本文：</span><span lang=EN-US style='font-size:12.0pt;color:#999999'><a href="http://m.3y.uu456.com/mbp_7tmvq2vucj0fluh9bb2i_1.html"><span
+style='text-decoration:none;text-underline:none'>http://m.3y.uu456.com/mbp_7tmvq2vucj0fluh9bb2i_1.html</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:15.6pt;margin-right:0cm;margin-bottom:23.4pt;margin-left:0cm;mso-para-margin-top:1.0gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:1.5gd;mso-para-margin-left:0cm;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:22.0pt;font-family:
+宋体'>用关系代数表示数据查询的典型例子<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<div style='margin-top:2.5pt;margin-bottom:2.5pt'>
+
+<div style='margin-top:7.8pt;margin-right:0cm;margin-bottom:12.45pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:justify;text-justify:inter-ideograph;text-indent:32.0pt;mso-char-indent-count:2.0;line-height:22.0pt;mso-line-height-rule:exactly;mso-pagination:none;font-size:16.0pt;mso-bidi-font-family:"Times New Roman";mso-font-kerning:1.0pt'><p>用关系代数表示数据查询的典型例子 </p><p>[例]设 教学数据库中有3个关系： </p><p>          学生关系S(SNO,SNAME,AGE,SEX) </p><p>          学习关系SC(SNO,CNO,GRADE) </p><p>          课程关系C(CNO,CNAME,TEACHER)  </p><p>     下面用关系代数表达式和SQL语句分别表达每个查询语句。 (1) 检索学习课程号为C2的学生学号与成绩。 </p><p>    πSNO，GRADE(σ CNO=’C2′(SC)) </p><p>SELECT SNO, GRADE          FROM SC          WHERE CNO=‘C2’ </p><p>(2) 检索学习课程号为C2的学生学号与姓名 </p><p>   πSNO，SNAME(σ CNO=’C2′(SSC)) </p><p>    由于这个查询涉及到两个关系S和SC，因此先对这两个关系进行自然连接，同一位学生的有关的信息，然后再执行选择投影操作。 此查询亦可等价地写成：     πSNO，SNAME（S）</p><p>（πSNO(σ CNO=’C2′(SC))） </p><p>    这个表达式中自然连接的右分量为”学了C2课的学生学号的集合”。这个表达式比前一个表达式优化，执行起来要省时间，省空间。      </p><p>SELECTSNO,SNAME FROM S WHERE EXISTS                                                       (SELECT * FROM SC                                                                        WHERESNO=S.SNO ANDCNO=‘C2’)  </p><p>（3）检索选修课程名为MATHS的学生学号与姓名。     πSNO，SANME(σ CNAME=’MATHS’(S</p><p>SCC)) </p><p>SELECT S.SNO, SNAME    FROM S, SC,C </p><p>   WHERE S.SNO=SC.SNO AND SC.CNO=C.CNO                          AND CNAME=‘MATHS’ </p><p>（4）检索选修课程号为C2或C4的学生学号。 </p><p>    πSNO(σ CNO=’C2’∨CNO=’C4′(SC)) </p><p>SELECT S.SNO, SNAME    FROM S, SC,C </p><p>   WHERE S.SNO=SC.SNO AND SC.CNO=C.CNO                          AND CNAME=‘MATHS’ </p><p>（5） 检索至少选修课程号为C2或C4的学生学号。     π1(σ1=4∧2=’C2’∧5=’C4′（SC×SC）) </p><p>    SELECTSNO  </p><p>    FROM SC AS X, SC AS Y </p><p>   WHERE X.SNO=Y.SNO AND X.CNO=‘C2’  </p><p>                                AND Y.CNO=‘C4’ </p><p>      这里（SC×SC）表示关系SC自身相乘的乘积操作，其中数字1，2，4，5都为它的结果关系中的属性序号。   比较这一题与上一题的差别。 </p><p>（6） 检索不学C2课的学生姓名与年龄。 </p><p>    πSNAME，AGE（S）－πSNAME，AGE(σ CNO=’C2′（S</p><p>SC）) </p><p>    这个表达式用了差运算，差运算的左分量为”全体学生的姓名和年龄”，右分量为”学了C2课的学生姓名与年龄”。     SELECT SNAME, AGE    FROM S </p><p>   WHERESNO NOT IN (SELECTSNO                     FROM SC </p><p>                   WHERECNO=‘C2’) 或SELECT SNMAE,AGE     FROM S </p><p>    WHERE NOT EXISTS (SELECT *                       FROM SC </p><p>                     WHERE SC.SNO=S.SNO ANDCNO=‘C2’)  </p><p>（7）检索学习全部课程的学生姓名。 编写这个查询语句的关系代数过程如下： </p><p> (a) 学生选课情况可用πSNO,CNO(SC)表示； (b) 全部课程可用πCNO(C)表示； </p><p>(c) 学了全部课程的学生学号可用除法操作表示。 </p><p>        操作结果为学号SNO的集合，该集合中每个学生（对应SNO)与C中任一门课程号CNO配在一起都在πSCO，CNO（SC） 中出现（即SC中出现），所以结果中每个学生都学了全部的课程（这是”除法”操作的含义）：     πSNO,CNO(SC)÷πCNO(C) </p><p>(d) 从SNO求学生姓名SNAME，可以用自然连结和投影操作组合而成：     πSNAME(S</p><p>(πSNO,CNO(SC)÷πCNO(C))) </p><p>这就是最后得到的关系代数表达式。 SELECT SNAME        FROM S </p><p>       WHERE NOT EXISTS                    (SELECT *                      FROM C </p><p>                    WHERE NOT EXISTS                      (SELECT *  FROM  SC </p><p>                      WHERE SC.SNO=S.SNO AND                                                                     SC.CNO=C.CNO)) （8） 检索所学课程包含S3所学课程的学生学号。 </p><p>注意：学生S3可能学多门课程，所以要用到除法操作来表达此查询语句。       学生选课情况可用操作  πSNO,CNO(SC)表示； </p><p>      所学课程包含学生S3所学课程的学生学号，可以用除法操作求得：     </p><p>πSNO,CNO(SC)÷  πCNO(σ SNO=’S3′(SC)） </p><p> SELECT DISTINCTSNO      FROM SC X </p><p>     WHERE NOT EXISTS </p><p>                   (SELECT * FROM SC Y                       WHERE Y.SNO=‘S3’ AND                      NOT EXISTS </p><p>                     (SELECT * FROM SC Z </p><p>                      WHERE Z.SNO=X.SNO AND                                                                           Z.CNO=Y.CNO))                          </p><p>（9） 将新课程元组（’C10′,’PHYSICS’,’YU’）插入到关系C中     (C∪(‘C10′,’PHYSICS’,’YU’)) </p><p>INSERT INTO C </p><p>  VALUES(’C10′,’PHYSICS’,’YU’) </p><p>（10） 将学号S4选修课程号为C4的成绩改为85分。     （SC-（’S4′,’C4′,?)∪(‘S4′,’C4′,85)） </p><p>    修改操作用代数表示分两步实现：先删去原元组，再插入新元组。题目中未给出原先的成绩，所以用”？”代替，检索时可忽略。 </p><p>UPDATE SC SET GRADE=85 WHERE SNO='S4'   AND CNO='C4' </p><p></p></div>
+
+<p style='margin-top:7.8pt;margin-right:0cm;margin-bottom:12.45pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;mso-para-margin-bottom:.8gd;mso-para-margin-left:0cm;text-align:justify;text-justify:inter-ideograph;text-indent:32.0pt;mso-char-indent-count:2.0;line-height:24.0pt;mso-line-height-rule:exactly;mso-pagination:none'><span lang=EN-US style='font-size:16.0pt;mso-bidi-font-family:"Times New Roman";mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoFooter align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>三亿文库</span><span lang=EN-US><a
+href="http://m.3y.uu456.com/">http://m.3y.uu456.com/</a></span></p>
+
+<p class=MsoFooter align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>免费文档下载</span><span lang=EN-US style='font-size:16.0pt;mso-bidi-font-size:10.0pt;color:#993300'><o:p></o:p></span></p>
+
+</div></div>
+</body></html>
